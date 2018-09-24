@@ -20,12 +20,12 @@ time_steps = 90  # timesteps (remembering previous 20 days of stock data)
 num_hidden = 128 # hidden layer num of features
 num_classes = 3 # stock data classes
 
-return_data = pd.read_csv('~/Documents/course/dl_survival/final_project/vol_sp500_price_return') # processed return data
+return_data = pd.read_csv('../data/vol_sp500_price_return') # processed return data
 return_data = return_data.iloc[:,1:].as_matrix()
 y = return_data[:,91].astype('float32') # this is 1, -1, 0
 seq = return_data[:,:91].astype('float32') # this is stock return sequence;
 
-vol_data = pd.read_csv('~/Documents/course/dl_survival/final_project/volume_sp500.csv', sep='\t') # volume data
+vol_data = pd.read_csv('../data/volume_sp500.csv', sep='\t') # volume data
 vol = vol_data.iloc[:,1:]
 vol_normed = normalize(vol.as_matrix(), axis=1).astype('float32') # normalized volume data for corresponding return of data; this is covariates in lstm
 
