@@ -16,8 +16,8 @@ from keras.utils import plot_model
 
 import matplotlib.pyplot as plt
 from keras.utils.vis_utils import model_to_dot
-image = pd.read_csv('~/Documents/course/dl_survival/final_project/image_matrix.csv')
-data = pd.read_csv('~/Documents/course/dl_survival/final_project/preprocessed_sp500.csv', sep='\t')
+image = pd.read_csv('../data/image_matrix.csv')
+data = pd.read_csv('../data/preprocessed_sp500.csv', sep='\t')
 np_data = np.array(data)[:,1:]
 np_image = np.array(image)[:,1:] # Turn all data into np.array data structure
 X = np_image.reshape([-1, 128, 128])
